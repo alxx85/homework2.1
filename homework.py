@@ -14,10 +14,7 @@ def open_book():
             while i < int(quantity):
                 lines = f.readline().strip()
                 lines_list = lines.split(' | ')
-                value = dict()
-                for lst, lines_numb in enumerate(lines_list):
-                    value[list_book[lst]] = lines_numb
-                cook_book[key].append(value)
+                cook_book[key].append(dict(zip(list_book, lines_list)))
                 i += 1
             f.readline()
     return cook_book
